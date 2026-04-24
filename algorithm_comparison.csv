@@ -1,0 +1,3 @@
+algorithm,success,objective_value,total_revenue_usd,ecological_deficit_m3,storage_violation_m3,release_violation_m3s,min_storage_m3,max_storage_m3,releases_m3s
+SLSQP,True,-80732.16,80732.16,0.0,0.0,0.0,99999.84,1000000.0,"[10.0, 11.213, 10.0, 10.0, 10.0, 25.4167, 18.0]"
+L-BFGS-B,True,-80732.16,80732.16,0.0,0.0,0.0,99999.84,1000000.0,"[10.0, 11.213, 10.0, 10.0, 10.0, 25.4167, 18.0]"

@@ -1,0 +1,4 @@
+scenario,success,total_revenue_usd,ecological_deficit_m3,min_storage_m3,max_storage_m3,releases_m3s
+low_minus_20_percent,True,68198.4,0.0,100000.0,914880.0,"[10.0, 10.0, 10.0, 10.0, 10.0, 18.2963, 14.3333]"
+nominal,True,80732.16,0.0,99999.84,1000000.0,"[10.0, 11.213, 10.0, 10.0, 10.0, 25.4167, 18.0]"
+high_plus_20_percent,True,96396.48,0.0,100000.0,1000000.0,"[12.0, 13.613, 12.0, 10.0, 12.0, 32.6167, 21.6]"

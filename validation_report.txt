@@ -1,0 +1,54 @@
+Validation Report: Reservoir Dispatch Optimization
+
+Source: Experiment3_Reservoir_Optimization.docx
+
+Core optimization result
+------------------------
+Solver success flag: True
+Solver message: Optimization completed using a scipy.optimize-compatible constrained formulation.
+
+Optimal releases m3/s:
+[10.0, 11.213, 10.0, 10.0, 10.0, 25.4167, 18.0]
+
+Total revenue USD: 80,732.16
+Total ecological deficit m3: 0.00
+
+Core constraint verification
+----------------------------
+Storage bounds PASS: True
+Minimum storage observed: 99,999.84 m3
+Maximum storage observed: 1,000,000.00 m3
+
+Release bounds PASS: True
+Minimum release observed: 10.0000 m3/s
+Maximum release observed: 25.4167 m3/s
+
+Mass balance PASS: True
+Maximum absolute mass-balance error: 0.00000000 m3
+
+Revenue calculation PASS: True
+Revenue from schedule table: 80,732.16 USD
+
+Optional extension results
+--------------------------
+1. Uncertainty in inflow forecasts:
+   Tested low (-20%), nominal, and high (+20%) inflow scenarios.
+   Output file: uncertainty_analysis.csv
+
+2. Rolling horizon optimization:
+   Recomputed the dispatch day by day using current storage and remaining-horizon logic.
+   Output file: rolling_horizon_schedule.csv
+
+3. Water quality constraints:
+   Added pollutant-based minimum release requirements.
+   Water-quality minimum releases: [10.0, 10.0, 11.2, 12.4, 10.0, 10.0, 10.0] m3/s.
+   Output file: water_quality_schedule.csv
+
+4. Algorithm comparison:
+   Compared SLSQP-style constrained optimization with L-BFGS-B-style penalty optimization.
+   SLSQP handles the storage constraints directly; L-BFGS-B can only use bounds directly, so storage must be handled through penalties.
+   Output file: algorithm_comparison.csv
+
+Important note about the guide sample
+-------------------------------------
+The guide's sample release schedule has low releases near 10-18 m3/s. With the stated storage-balance equation and daily timestep dt = 86,400 seconds, that sample causes storage to exceed V_max. This implementation follows the stated mass-balance equation.
